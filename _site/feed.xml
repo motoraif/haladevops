@@ -1,21 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://haladevops.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://haladevops.com/" rel="alternate" type="text/html" /><updated>2024-08-05T13:14:16+03:00</updated><id>https://haladevops.com/feed.xml</id><title type="html">Hala DevOps</title><subtitle>This will be a collaboration website to share DevOps knowledge. We will try to update it on a weekly basis. </subtitle><entry><title type="html">Welcome to Hala DevOps!</title><link href="https://haladevops.com/hala/devops/update/2024/08/04/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Hala DevOps!" /><published>2024-08-04T09:12:09+03:00</published><updated>2024-08-04T09:12:09+03:00</updated><id>https://haladevops.com/hala/devops/update/2024/08/04/welcome-to-jekyll</id><content type="html" xml:base="https://haladevops.com/hala/devops/update/2024/08/04/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">Hala DevOps serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-06T14:44:20+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hala DevOps</title><subtitle>This will be a collaboration website to share DevOps knowledge. We will try to update it on a weekly basis. </subtitle><entry><title type="html">Welcome to HalaDevOps!</title><link href="http://localhost:4000/2024/08/06/welcome-to-haladevops.html" rel="alternate" type="text/html" title="Welcome to HalaDevOps!" /><published>2024-08-06T00:00:00+03:00</published><updated>2024-08-06T00:00:00+03:00</updated><id>http://localhost:4000/2024/08/06/welcome-to-haladevops</id><content type="html" xml:base="http://localhost:4000/2024/08/06/welcome-to-haladevops.html"><![CDATA[<p>Welcome to the launch of HalaDevOps.com! We’re thrilled to introduce you to our new platform dedicated to all things DevOps. Whether you’re a seasoned DevOps engineer or just starting your journey, our goal is to provide you with valuable resources, insights, and practical tutorials to help you excel in this dynamic field.</p>
 
-<p>Hala DevOps requires blog post files to be named according to the following format:</p>
+<h3 id="what-we-offer">What We Offer</h3>
 
-<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+<p>At HalaDevOps, we aim to bridge the gap between complex DevOps concepts and practical implementation. Here’s what you can expect from our site:</p>
 
-<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<ul>
+  <li>
+    <p><strong>In-Depth Tutorials:</strong> Step-by-step guides covering a range of topics from CI/CD pipelines to container orchestration with Kubernetes. Our tutorials are designed to be actionable and easy to follow, helping you apply what you learn right away.</p>
+  </li>
+  <li>
+    <p><strong>Expert Insights:</strong> Stay up-to-date with the latest trends, best practices, and emerging technologies in DevOps. Our articles feature insights from industry experts to keep you informed and ahead of the curve.</p>
+  </li>
+  <li>
+    <p><strong>Community Support:</strong> Engage with a community of like-minded professionals. Share your experiences, ask questions, and contribute to discussions in our forums and social media channels.</p>
+  </li>
+  <li>
+    <p><strong>Resources and Tools:</strong> Access curated resources and tools to streamline your DevOps processes. From configuration management to monitoring and automation, we’ve got you covered with the best solutions.</p>
+  </li>
+</ul>
 
-<p>Hala DevOps also offers powerful support for code snippets:</p>
+<h3 id="our-vision">Our Vision</h3>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<p>DevOps is not just a set of practices; it’s a culture of collaboration, automation, and continuous improvement. Our vision is to foster a community where professionals can share knowledge, discover new techniques, and drive innovation in their organizations.</p>
 
-<p>Check out the [Hala DevOps docs][Hala DevOps-docs] for more info on how to get the most out of Hala DevOps. File all bugs/feature requests at [Hala DevOps’s GitHub repo][Hala DevOps-gh]. If you have questions, you can ask them on [Hala DevOps Talk][Hala DevOps-talk].</p>
+<h3 id="get-involved">Get Involved</h3>
 
-<!-- [jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/ -->]]></content><author><name></name></author><category term="Hala" /><category term="DevOps" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run Hala DevOps serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry></feed>
+<p>We invite you to explore our content, participate in discussions, and contribute to the growth of our community. Your feedback and engagement are essential as we build a platform that meets your needs and helps you succeed.</p>
+
+<p>Thank you for joining us on this exciting journey. We look forward to being a part of your DevOps adventure!</p>
+
+<p>Stay tuned for more content, and don’t hesitate to reach out if you have any questions or suggestions. Welcome to HalaDevOps!</p>]]></content><author><name>HalaDevOps Team</name></author><summary type="html"><![CDATA[Welcome to the launch of HalaDevOps.com! We’re thrilled to introduce you to our new platform dedicated to all things DevOps. Whether you’re a seasoned DevOps engineer or just starting your journey, our goal is to provide you with valuable resources, insights, and practical tutorials to help you excel in this dynamic field.]]></summary></entry></feed>
