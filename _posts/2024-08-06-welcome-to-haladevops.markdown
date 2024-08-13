@@ -31,4 +31,4 @@ Thank you for joining us on this exciting journey. We look forward to being a pa
 
 Stay tuned for more content, and don’t hesitate to reach out if you have any questions or suggestions. Welcome to HalaDevOps!
 
-###Hala DevOps Team
+### Hala DevOps Team
