@@ -4,216 +4,435 @@
     <meta charset="UTF-8">
     <title>DevOps Readiness Checklist - HalaDevOps</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            line-height: 1.6;
+        @page {
+            margin: 20mm;
         }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            line-height: 1.6;
+            color: #1a1a2e;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        
+        .website {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
         h1 {
             color: #0066ff;
             border-bottom: 3px solid #0066ff;
             padding-bottom: 10px;
-        }
-        h2 {
-            color: #333;
             margin-top: 30px;
-            background: #f0f1f3;
-            padding: 10px;
-            border-left: 4px solid #0066ff;
         }
+        
+        h2 {
+            color: #1a1a2e;
+            margin-top: 30px;
+            background: #e8f4ff;
+            padding: 12px 15px;
+            border-left: 5px solid #0066ff;
+            border-radius: 5px;
+        }
+        
+        .intro {
+            background: #f0f1f3;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 5px solid #00d4ff;
+        }
+        
+        .intro h3 {
+            color: #0066ff;
+            margin-top: 0;
+        }
+        
         .checklist {
             margin: 20px 0;
         }
+        
         .checklist-item {
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            display: flex;
+            align-items: flex-start;
         }
+        
         .checkbox {
             display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #0066ff;
-            margin-right: 10px;
-            vertical-align: middle;
+            width: 22px;
+            height: 22px;
+            border: 3px solid #0066ff;
+            margin-right: 15px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
+        
+        .item-content {
+            flex: 1;
+        }
+        
+        .item-content strong {
+            color: #0066ff;
+        }
+        
+        .score-section {
+            background: linear-gradient(135deg, #e8f4ff 0%, #f0f8ff 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 2px solid #0066ff;
+        }
+        
+        .score-section h3 {
+            color: #0066ff;
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        
+        .score-table {
+            margin: 20px 0;
+            width: 100%;
+        }
+        
+        .score-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .score-table td:first-child {
+            font-weight: bold;
+            color: #0066ff;
+            width: 30%;
+        }
+        
         .footer {
             margin-top: 50px;
-            padding-top: 20px;
-            border-top: 2px solid #ddd;
+            padding: 30px;
+            background: #1a1a2e;
+            color: white;
+            border-radius: 12px;
             text-align: center;
-            color: #666;
         }
-        .logo {
-            text-align: center;
-            margin-bottom: 30px;
+        
+        .footer h3 {
+            color: #00d4ff;
+            margin-top: 0;
         }
-        .score {
-            background: #e8f4ff;
-            padding: 15px;
-            border-radius: 8px;
+        
+        .footer a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+        
+        .contact-info {
             margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+        }
+        
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #0066ff;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,102,255,0.3);
+            z-index: 1000;
+        }
+        
+        .download-btn:hover {
+            background: #0052cc;
+        }
+        
+        @media print {
+            .download-btn {
+                display: none;
+            }
+            body {
+                padding: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="logo">
-        <h1>🚀 DevOps Readiness Checklist</h1>
-        <p><strong>HalaDevOps.com</strong> | Assess Your DevOps Maturity</p>
+    <a href="#" onclick="window.print(); return false;" class="download-btn">
+        📥 Download PDF
+    </a>
+
+    <div class="header">
+        <div class="logo">🚀 HalaDevOps</div>
+        <div class="tagline">DevOps Consulting & Training</div>
+        <div class="website">haladevops.com</div>
     </div>
 
-    <div class="score">
-        <h3>How to Use This Checklist:</h3>
+    <h1>DevOps Readiness Checklist</h1>
+    <p style="font-size: 1.1rem; color: #6c757d;">Assess Your DevOps Maturity - 25 Essential Points</p>
+
+    <div class="intro">
+        <h3>📋 How to Use This Checklist:</h3>
         <p>✓ Check each item that applies to your current setup<br>
         ✓ Count your total checks<br>
-        ✓ Score: 20-25 = Excellent | 15-19 = Good | 10-14 = Needs Improvement | 0-9 = Critical</p>
+        ✓ Calculate your DevOps maturity score<br>
+        ✓ Identify areas for improvement</p>
     </div>
 
     <h2>1. CI/CD Pipeline (5 points)</h2>
     <div class="checklist">
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Automated builds:</strong> Code commits trigger automatic builds
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Automated builds:</strong> Code commits trigger automatic builds without manual intervention
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Automated testing:</strong> Unit, integration, and E2E tests run automatically
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Automated testing:</strong> Unit, integration, and E2E tests run automatically in pipeline
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Automated deployment:</strong> Successful builds deploy to staging/production
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Automated deployment:</strong> Successful builds automatically deploy to staging/production
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Rollback capability:</strong> Can quickly revert to previous version
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Rollback capability:</strong> Can quickly revert to previous version if issues arise
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Pipeline visibility:</strong> Team can see build/deploy status in real-time
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Pipeline visibility:</strong> Team can see build/deploy status in real-time dashboard
+            </div>
         </div>
     </div>
 
     <h2>2. Infrastructure as Code (4 points)</h2>
     <div class="checklist">
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Version controlled:</strong> Infrastructure code is in Git/version control
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Version controlled:</strong> All infrastructure code is in Git or version control system
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Declarative config:</strong> Using Terraform, CloudFormation, or similar
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Declarative config:</strong> Using Terraform, CloudFormation, Pulumi, or similar tools
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Reproducible environments:</strong> Can spin up identical environments easily
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Reproducible environments:</strong> Can spin up identical dev/staging/prod environments
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Automated provisioning:</strong> No manual server configuration
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Automated provisioning:</strong> No manual server configuration or "snowflake" servers
+            </div>
         </div>
     </div>
 
     <h2>3. Security & Compliance (4 points)</h2>
     <div class="checklist">
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Secrets management:</strong> Using vault/secrets manager (not hardcoded)
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Secrets management:</strong> Using vault/secrets manager - no hardcoded credentials
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Security scanning:</strong> Automated vulnerability scanning in pipeline
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Security scanning:</strong> Automated vulnerability scanning integrated in CI/CD pipeline
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Access control:</strong> RBAC implemented, least privilege principle
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Access control:</strong> RBAC implemented with least privilege principle enforced
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Audit logging:</strong> All changes and access are logged
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Audit logging:</strong> All infrastructure changes and access attempts are logged
+            </div>
         </div>
     </div>
 
     <h2>4. Monitoring & Observability (4 points)</h2>
     <div class="checklist">
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Application monitoring:</strong> APM tools tracking performance
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Application monitoring:</strong> APM tools tracking application performance and errors
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Infrastructure monitoring:</strong> Server/container metrics collected
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Infrastructure monitoring:</strong> Server/container metrics (CPU, memory, disk) collected
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Centralized logging:</strong> Logs aggregated and searchable
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Centralized logging:</strong> Logs from all services aggregated and searchable
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Alerting:</strong> Automated alerts for critical issues
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Alerting:</strong> Automated alerts configured for critical issues with on-call rotation
+            </div>
         </div>
     </div>
 
     <h2>5. Cost Optimization (4 points)</h2>
     <div class="checklist">
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Resource tagging:</strong> All resources properly tagged for cost tracking
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Resource tagging:</strong> All cloud resources properly tagged for cost allocation
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Auto-scaling:</strong> Resources scale based on demand
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Auto-scaling:</strong> Resources automatically scale up/down based on actual demand
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Cost monitoring:</strong> Regular cost analysis and optimization
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Cost monitoring:</strong> Regular cost analysis and optimization reviews conducted
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Reserved instances:</strong> Using reserved/spot instances where appropriate
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Reserved instances:</strong> Using reserved/spot instances where appropriate for savings
+            </div>
         </div>
     </div>
 
     <h2>6. Team Collaboration (4 points)</h2>
     <div class="checklist">
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Documentation:</strong> Runbooks, architecture docs, and processes documented
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Documentation:</strong> Runbooks, architecture docs, and processes well-documented
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Code reviews:</strong> All changes reviewed before merging
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Code reviews:</strong> All infrastructure and application changes reviewed before merging
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Incident response:</strong> Clear process for handling incidents
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Incident response:</strong> Clear process and runbooks for handling production incidents
+            </div>
         </div>
         <div class="checklist-item">
-            <span class="checkbox">☐</span>
-            <strong>Knowledge sharing:</strong> Regular team meetings, post-mortems
+            <span class="checkbox"></span>
+            <div class="item-content">
+                <strong>Knowledge sharing:</strong> Regular team meetings, post-mortems, and documentation updates
+            </div>
         </div>
     </div>
 
-    <div class="score">
-        <h3>Your Score: _____ / 25</h3>
-        <p><strong>Next Steps:</strong></p>
-        <ul>
-            <li>20-25: Excellent! Focus on optimization and advanced practices</li>
-            <li>15-19: Good foundation. Identify gaps and prioritize improvements</li>
-            <li>10-14: Needs work. Consider a DevOps audit to create improvement roadmap</li>
-            <li>0-9: Critical. Professional help recommended to establish DevOps practices</li>
-        </ul>
+    <div class="score-section">
+        <h3>📊 Your DevOps Maturity Score</h3>
+        <p style="font-size: 1.2rem; margin: 20px 0;">
+            <strong>Total Score: _____ / 25</strong>
+        </p>
+        
+        <table class="score-table">
+            <tr>
+                <td>20-25 Points</td>
+                <td><strong>Excellent!</strong> You have mature DevOps practices. Focus on optimization and advanced automation.</td>
+            </tr>
+            <tr>
+                <td>15-19 Points</td>
+                <td><strong>Good Foundation.</strong> Solid practices in place. Identify gaps and prioritize improvements.</td>
+            </tr>
+            <tr>
+                <td>10-14 Points</td>
+                <td><strong>Needs Improvement.</strong> Consider a DevOps audit to create a comprehensive improvement roadmap.</td>
+            </tr>
+            <tr>
+                <td>0-9 Points</td>
+                <td><strong>Critical.</strong> Professional help strongly recommended to establish foundational DevOps practices.</td>
+            </tr>
+        </table>
     </div>
 
     <div class="footer">
-        <h3>Need Help Improving Your Score?</h3>
-        <p><strong>HalaDevOps</strong> can help you implement these practices</p>
-        <p>📧 hello@haladevops.com | 🌐 haladevops.com</p>
-        <p>Book a free consultation: <a href="https://calendly.com/mohd-toraif/30min">calendly.com/mohd-toraif/30min</a></p>
-        <hr>
-        <p style="font-size: 12px; color: #999;">© 2026 HalaDevOps. All rights reserved.</p>
+        <h3>🚀 Ready to Improve Your DevOps Score?</h3>
+        <p style="font-size: 1.1rem;">HalaDevOps can help you implement these practices and accelerate your DevOps journey</p>
+        
+        <div class="contact-info">
+            <p>📧 <a href="mailto:hello@haladevops.com">hello@haladevops.com</a></p>
+            <p>🌐 <a href="https://haladevops.com">haladevops.com</a></p>
+            <p>📅 <a href="https://calendly.com/mohd-toraif/30min">Book Free Consultation</a></p>
+        </div>
+        
+        <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+            © 2026 HalaDevOps. All rights reserved.
+        </p>
     </div>
 </body>
 </html>
