@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DevOps Readiness Checklist - HalaDevOps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #0066ff;
+            border-bottom: 3px solid #0066ff;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #333;
+            margin-top: 30px;
+            background: #f0f1f3;
+            padding: 10px;
+            border-left: 4px solid #0066ff;
+        }
+        .checklist {
+            margin: 20px 0;
+        }
+        .checklist-item {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .checkbox {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #0066ff;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            color: #666;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .score {
+            background: #e8f4ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <h1>🚀 DevOps Readiness Checklist</h1>
+        <p><strong>HalaDevOps.com</strong> | Assess Your DevOps Maturity</p>
+    </div>
+
+    <div class="score">
+        <h3>How to Use This Checklist:</h3>
+        <p>✓ Check each item that applies to your current setup<br>
+        ✓ Count your total checks<br>
+        ✓ Score: 20-25 = Excellent | 15-19 = Good | 10-14 = Needs Improvement | 0-9 = Critical</p>
+    </div>
+
+    <h2>1. CI/CD Pipeline (5 points)</h2>
+    <div class="checklist">
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Automated builds:</strong> Code commits trigger automatic builds
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Automated testing:</strong> Unit, integration, and E2E tests run automatically
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Automated deployment:</strong> Successful builds deploy to staging/production
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Rollback capability:</strong> Can quickly revert to previous version
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Pipeline visibility:</strong> Team can see build/deploy status in real-time
+        </div>
+    </div>
+
+    <h2>2. Infrastructure as Code (4 points)</h2>
+    <div class="checklist">
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Version controlled:</strong> Infrastructure code is in Git/version control
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Declarative config:</strong> Using Terraform, CloudFormation, or similar
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Reproducible environments:</strong> Can spin up identical environments easily
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Automated provisioning:</strong> No manual server configuration
+        </div>
+    </div>
+
+    <h2>3. Security & Compliance (4 points)</h2>
+    <div class="checklist">
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Secrets management:</strong> Using vault/secrets manager (not hardcoded)
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Security scanning:</strong> Automated vulnerability scanning in pipeline
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Access control:</strong> RBAC implemented, least privilege principle
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Audit logging:</strong> All changes and access are logged
+        </div>
+    </div>
+
+    <h2>4. Monitoring & Observability (4 points)</h2>
+    <div class="checklist">
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Application monitoring:</strong> APM tools tracking performance
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Infrastructure monitoring:</strong> Server/container metrics collected
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Centralized logging:</strong> Logs aggregated and searchable
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Alerting:</strong> Automated alerts for critical issues
+        </div>
+    </div>
+
+    <h2>5. Cost Optimization (4 points)</h2>
+    <div class="checklist">
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Resource tagging:</strong> All resources properly tagged for cost tracking
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Auto-scaling:</strong> Resources scale based on demand
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Cost monitoring:</strong> Regular cost analysis and optimization
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Reserved instances:</strong> Using reserved/spot instances where appropriate
+        </div>
+    </div>
+
+    <h2>6. Team Collaboration (4 points)</h2>
+    <div class="checklist">
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Documentation:</strong> Runbooks, architecture docs, and processes documented
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Code reviews:</strong> All changes reviewed before merging
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Incident response:</strong> Clear process for handling incidents
+        </div>
+        <div class="checklist-item">
+            <span class="checkbox">☐</span>
+            <strong>Knowledge sharing:</strong> Regular team meetings, post-mortems
+        </div>
+    </div>
+
+    <div class="score">
+        <h3>Your Score: _____ / 25</h3>
+        <p><strong>Next Steps:</strong></p>
+        <ul>
+            <li>20-25: Excellent! Focus on optimization and advanced practices</li>
+            <li>15-19: Good foundation. Identify gaps and prioritize improvements</li>
+            <li>10-14: Needs work. Consider a DevOps audit to create improvement roadmap</li>
+            <li>0-9: Critical. Professional help recommended to establish DevOps practices</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <h3>Need Help Improving Your Score?</h3>
+        <p><strong>HalaDevOps</strong> can help you implement these practices</p>
+        <p>📧 hello@haladevops.com | 🌐 haladevops.com</p>
+        <p>Book a free consultation: <a href="https://calendly.com/mohd-toraif/30min">calendly.com/mohd-toraif/30min</a></p>
+        <hr>
+        <p style="font-size: 12px; color: #999;">© 2026 HalaDevOps. All rights reserved.</p>
+    </div>
+</body>
+</html>

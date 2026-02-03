@@ -229,18 +229,15 @@
                 <div class="lead-magnet-form">
                     <div class="form-card">
                         <h3>Download Your Free Checklist</h3>
-                        <p>Enter your email to receive the checklist instantly</p>
-                        <form id="lead-form" action="https://formspree.io/f/mreldybv" method="POST">
-                            <input type="hidden" name="_subject" value="DevOps Checklist Download Request">
-                            <input type="hidden" name="type" value="checklist_download">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
-                            <input type="text" name="company" placeholder="Company (Optional)">
+                        <p>Get instant access to the 25-point checklist</p>
+                        <form id="lead-form">
+                            <input type="text" id="lead-name" placeholder="Your Name" required>
+                            <input type="email" id="lead-email" placeholder="Your Email" required>
+                            <input type="text" id="lead-company" placeholder="Company (Optional)">
                             <button type="submit" class="btn-primary">
                                 <i class="fas fa-download"></i> Get Free Checklist
                             </button>
-                            <p class="privacy-note">🔒 We respect your privacy. No spam, ever.</p>
-                            <div id="lead-form-status" style="margin-top: 1rem; padding: 1rem; border-radius: 8px; display: none;"></div>
+                            <p class="privacy-note">🔒 No email required - instant download</p>
                         </form>
                     </div>
                 </div>
@@ -545,48 +542,38 @@
             });
         });
 
-        // Lead Magnet Form
+        // Lead Magnet Form - Direct Download
         const leadForm = document.getElementById('lead-form');
-        const leadFormStatus = document.getElementById('lead-form-status');
         
         if (leadForm) {
             leadForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 
-                const button = leadForm.querySelector('button[type="submit"]');
-                const originalHTML = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                button.disabled = true;
+                const name = document.getElementById('lead-name').value;
+                const email = document.getElementById('lead-email').value;
+                const company = document.getElementById('lead-company').value;
                 
-                try {
-                    const response = await fetch(leadForm.action, {
-                        method: 'POST',
-                        body: new FormData(leadForm),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        leadFormStatus.style.display = 'block';
-                        leadFormStatus.style.background = '#d4edda';
-                        leadFormStatus.style.color = '#155724';
-                        leadFormStatus.style.border = '1px solid #c3e6cb';
-                        leadFormStatus.innerHTML = '<strong>✓ Success!</strong> Check your email for the DevOps Checklist. (Check spam folder if you don\'t see it)';
-                        leadForm.reset();
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                } catch (error) {
-                    leadFormStatus.style.display = 'block';
-                    leadFormStatus.style.background = '#f8d7da';
-                    leadFormStatus.style.color = '#721c24';
-                    leadFormStatus.style.border = '1px solid #f5c6cb';
-                    leadFormStatus.innerHTML = '<strong>✗ Error!</strong> Something went wrong. Please try again.';
-                } finally {
-                    button.innerHTML = originalHTML;
-                    button.disabled = false;
-                }
+                // Send lead info to Formspree in background (optional tracking)
+                fetch('https://formspree.io/f/mreldybv', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        type: 'checklist_download',
+                        name: name,
+                        email: email,
+                        company: company,
+                        _subject: 'DevOps Checklist Downloaded'
+                    })
+                }).catch(() => {}); // Silent fail, don't block download
+                
+                // Open checklist in new tab
+                window.open('devops-checklist.html', '_blank');
+                
+                // Show success message
+                alert('✓ Checklist opened in new tab! Check your browser if it was blocked.');
+                leadForm.reset();
             });
         }
 
