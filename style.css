@@ -290,12 +290,10 @@ section {
     font-size: 3rem;
     color: var(--primary);
     margin-bottom: 1rem;
-    transition: all 0.3s ease;
 }
 
 .service-card:hover .service-icon {
-    transform: scale(1.2) rotate(5deg);
-    color: var(--secondary);
+    /* Icon hover effect disabled */
 }
 
 .service-card h3 {
