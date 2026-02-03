@@ -13,13 +13,13 @@ const ANIMATION_CONFIG = {
     dynamicNavbarShadow: true,
     
     // Card Animations
-    cardStaggerAnimation: true,
-    card3DTilt: true,
+    cardStaggerAnimation: false,
+    card3DTilt: false,
     cardHoverLift: true,
     
     // Icon Effects
-    floatingIcons: true,
-    iconHoverScale: true,
+    floatingIcons: false,
+    iconHoverScale: false,
     
     // Button Effects
     buttonRipple: true,
