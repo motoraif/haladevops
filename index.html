@@ -285,6 +285,96 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about our DevOps services</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does a typical CI/CD pipeline setup take?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most CI/CD pipeline implementations take 2-4 weeks, depending on complexity. This includes initial assessment, design, implementation, testing, and team training. We work in sprints to deliver value incrementally.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you work with all cloud providers?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We have extensive experience with AWS, Azure, and Google Cloud Platform. We'll recommend the best platform for your specific needs and budget, or work with your existing cloud infrastructure.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What's included in the DevOps Audit?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our comprehensive audit includes: infrastructure review, security assessment, performance analysis, cost optimization opportunities, CI/CD pipeline evaluation, and a detailed report with actionable recommendations. You'll also get a 1-hour consultation to discuss findings.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can you help with an existing infrastructure?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We specialize in optimizing and modernizing existing infrastructure. Whether you need to improve performance, reduce costs, enhance security, or implement better practices, we can help without disrupting your operations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How much can I save with cost optimization?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most clients see 30-60% reduction in cloud costs within the first 3 months. We identify unused resources, right-size instances, implement reserved instances, and optimize storage. The service typically pays for itself within the first month.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you provide ongoing support?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer flexible support packages including 24/7 monitoring, incident response, regular maintenance, and continuous optimization. We can also train your team to manage the infrastructure independently.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What if I'm not satisfied with the service?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 100% satisfaction guarantee. If you're not happy with our work within the first week, we'll refund your payment in full. Our goal is to build long-term partnerships, not just complete projects.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I get started?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply book a free 30-minute consultation using the button above. We'll discuss your needs, challenges, and goals. Then we'll provide a detailed proposal with timeline and pricing. No commitment required for the initial consultation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
@@ -396,6 +486,24 @@
             setTimeout(() => {
                 document.body.classList.add('loaded');
             }, 500);
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Toggle current FAQ
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
         });
 
         // AJAX form submission
