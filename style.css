@@ -77,6 +77,15 @@ body {
     color: var(--primary);
 }
 
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+
 /* Buttons */
 .btn-primary, .btn-secondary, .btn-outline {
     padding: 12px 30px;
@@ -1021,6 +1030,228 @@ section {
     width: 100%;
 }
 
+/* About Page */
+.about-hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 6rem 0 4rem;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+.about-page {
+    padding: 4rem 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.about-main h2 {
+    color: var(--primary);
+    margin: 2rem 0 1rem;
+}
+
+.about-main p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+}
+
+.about-list li {
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+}
+
+.about-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.process-steps {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.process-step {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary);
+}
+
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.process-step h3 {
+    margin: 0.5rem 0;
+}
+
+.about-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.founder-card, .stats-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.founder-image {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.founder-image i {
+    font-size: 6rem;
+    color: var(--primary);
+}
+
+.founder-card h3 {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.founder-title {
+    text-align: center;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.founder-bio {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.certifications h4 {
+    margin: 1.5rem 0 1rem;
+    color: var(--primary);
+}
+
+.certifications ul {
+    list-style: none;
+    padding: 0;
+}
+
+.certifications li {
+    padding: 0.5rem 0;
+}
+
+.certifications i {
+    color: var(--primary);
+    margin-right: 0.5rem;
+}
+
+.social-links-about {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-links-about a {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.social-links-about a:hover {
+    transform: translateY(-3px);
+}
+
+.stats-card h4 {
+    margin: 0 0 1.5rem;
+    color: var(--primary);
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-num {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.stat-label {
+    color: #666;
+}
+
+.values {
+    background: white;
+    padding: 4rem 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.value-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.value-card h3 {
+    margin: 1rem 0;
+}
+
 /* Footer */
 .footer {
     background: var(--dark);
@@ -1101,12 +1332,52 @@ section {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .mobile-toggle {
+        display: block;
+    }
+    
     .nav-menu {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        gap: 0;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 0.5rem;
+    }
+    
+    .navbar .container {
+        position: relative;
     }
     
     .hero-content h1 {
         font-size: 2rem;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
     }
     
     .hero-subtitle {

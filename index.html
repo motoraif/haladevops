@@ -66,9 +66,12 @@
                 <i class="fas fa-rocket"></i>
                 <span>HalaDevOps</span>
             </div>
-            <ul class="nav-menu">
+            <button class="mobile-toggle" id="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="#courses">Courses</a></li>
                 <li><a href="#contact" class="btn-primary">Get Started</a></li>
             </ul>
@@ -686,6 +689,35 @@
     </script>
     <script>
         // Google Analytics Event Tracking
+        
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+                
+                // Track mobile menu toggle
+                gtag('event', 'mobile_menu_toggle', {
+                    'event_category': 'navigation',
+                    'event_label': navMenu.classList.contains('active') ? 'open' : 'close'
+                });
+            });
+            
+            // Close menu when clicking a link
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    const icon = mobileToggle.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                });
+            });
+        }
         
         // Track Calendly button clicks
         document.querySelectorAll('a[href*="calendly.com"]').forEach(link => {
