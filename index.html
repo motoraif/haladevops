@@ -610,6 +610,15 @@
                 // Open checklist in new tab
                 window.open('devops-checklist.html', '_blank');
                 
+                // Track checklist download
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'generate_lead', {
+                        'event_category': 'Lead',
+                        'event_label': 'Checklist Download',
+                        'value': 5
+                    });
+                }
+                
                 // Show success message
                 alert('✓ Checklist opened in new tab! Check your browser if it was blocked.');
                 leadForm.reset();
@@ -639,6 +648,15 @@
                     });
                     
                     if (response.ok) {
+                        // Track contact form submission
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'generate_lead', {
+                                'event_category': 'Lead',
+                                'event_label': 'Contact Form',
+                                'value': 10
+                            });
+                        }
+                        
                         formStatus.style.display = 'block';
                         formStatus.style.background = '#d4edda';
                         formStatus.style.color = '#155724';
@@ -665,6 +683,120 @@
                 }
             });
         }
+    </script>
+    <script>
+        // Google Analytics Event Tracking
+        
+        // Track Calendly button clicks
+        document.querySelectorAll('a[href*="calendly.com"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'CTA',
+                        'event_label': 'Book Consultation',
+                        'value': 15
+                    });
+                }
+            });
+        });
+        
+        // Track service card clicks
+        document.querySelectorAll('.service-card').forEach((card, index) => {
+            card.addEventListener('click', () => {
+                const serviceName = card.querySelector('h3')?.textContent || 'Unknown Service';
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'select_content', {
+                        'content_type': 'service',
+                        'content_id': serviceName.toLowerCase().replace(/\s+/g, '-'),
+                        'event_category': 'Service Interest',
+                        'event_label': serviceName
+                    });
+                }
+            });
+        });
+        
+        // Track FAQ interactions
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const questionText = question.querySelector('h3')?.textContent || 'FAQ';
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'engagement', {
+                        'event_category': 'FAQ',
+                        'event_label': questionText.substring(0, 50)
+                    });
+                }
+            });
+        });
+        
+        // Track "Get Quote" button clicks
+        document.querySelectorAll('.btn-outline, .btn-primary').forEach(btn => {
+            if (btn.textContent.includes('Get Quote') || btn.textContent.includes('Quote')) {
+                btn.addEventListener('click', () => {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'click', {
+                            'event_category': 'CTA',
+                            'event_label': 'Get Quote',
+                            'value': 8
+                        });
+                    }
+                });
+            }
+        });
+        
+        // Track time on site (30 seconds = engaged user)
+        setTimeout(() => {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'engagement', {
+                    'event_category': 'Time',
+                    'event_label': '30 seconds',
+                    'value': 30
+                });
+            }
+        }, 30000);
+        
+        // Track scroll depth (75% = highly engaged)
+        let scrollTracked = false;
+        window.addEventListener('scroll', () => {
+            if (!scrollTracked) {
+                const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
+                if (scrollPercent > 75) {
+                    scrollTracked = true;
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'scroll', {
+                            'event_category': 'Engagement',
+                            'event_label': '75% Scroll',
+                            'value': 75
+                        });
+                    }
+                }
+            }
+        });
+        
+        // Track email clicks
+        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'Contact',
+                        'event_label': 'Email Click'
+                    });
+                }
+            });
+        });
+        
+        // Track social media clicks
+        document.querySelectorAll('a[href*="linkedin.com"], a[href*="github.com"], a[href*="twitter.com"]').forEach(link => {
+            link.addEventListener('click', () => {
+                const platform = link.href.includes('linkedin') ? 'LinkedIn' : 
+                               link.href.includes('github') ? 'GitHub' : 'Twitter';
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'Social',
+                        'event_label': platform
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
