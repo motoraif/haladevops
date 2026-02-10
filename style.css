@@ -238,8 +238,8 @@ body {
 /* Why Us Section */
 .why-us-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--dark-bg) 0%, #1a2942 100%);
-    color: var(--white);
+    background: var(--white);
+    color: var(--text-dark);
 }
 
 .why-us-content {
@@ -252,31 +252,32 @@ body {
     font-size: 1.2rem;
     line-height: 1.9;
     margin-bottom: 3rem;
-    opacity: 0.9;
+    color: var(--text-light);
 }
 
 .why-us-tagline {
-    background: rgba(255,255,255,0.1);
-    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 3rem;
     border-radius: var(--border-radius);
-    backdrop-filter: blur(10px);
+    color: var(--white);
 }
 
 .why-us-tagline h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: var(--white);
 }
 
 .why-us-tagline p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    opacity: 0.9;
+    color: var(--white);
 }
 
 .tagline-emphasis {
     font-size: 1.5rem !important;
     font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--white);
     margin-top: 1.5rem !important;
 }
 
