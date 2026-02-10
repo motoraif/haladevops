@@ -242,6 +242,10 @@ body {
     color: var(--white);
 }
 
+.why-us-section .section-heading {
+    color: var(--white);
+}
+
 .why-us-content {
     max-width: 900px;
     margin: 0 auto;
@@ -252,7 +256,7 @@ body {
     font-size: 1.2rem;
     line-height: 1.9;
     margin-bottom: 3rem;
-    opacity: 0.9;
+    color: rgba(255,255,255,0.9);
 }
 
 .why-us-tagline {
