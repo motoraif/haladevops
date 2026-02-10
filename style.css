@@ -149,10 +149,6 @@ body {
     color: var(--text-dark);
 }
 
-.why-us-section .section-heading {
-    color: var(--text-dark);
-}
-
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -264,28 +260,27 @@ body {
 }
 
 .why-us-tagline {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    padding: 3rem;
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
     border-radius: var(--border-radius);
-    color: var(--white);
+    backdrop-filter: blur(10px);
 }
 
 .why-us-tagline h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: var(--white);
 }
 
 .why-us-tagline p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    color: var(--white);
+    opacity: 0.9;
 }
 
 .tagline-emphasis {
     font-size: 1.5rem !important;
     font-weight: 700;
-    color: var(--white);
+    color: var(--secondary-color);
     margin-top: 1.5rem !important;
 }
 
