@@ -149,6 +149,10 @@ body {
     color: var(--text-dark);
 }
 
+.why-us-section .section-heading {
+    color: var(--text-dark);
+}
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
