@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN6W7B48KN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YN6W7B48KN');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HalaDevOps - Expert DevOps Consulting, CI/CD, Cloud Migration & Training Services">
+    <meta name="keywords" content="DevOps, CI/CD, Cloud Migration, AWS, Kubernetes, Docker, Consulting">
+    <title>HalaDevOps - DevOps Consulting & Training</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="animation-config.js"></script>
+    <style>
+        /* Loading screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease-out;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        body.loaded #loading-screen {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-rocket"></i>
+                <span>HalaDevOps</span>
+            </div>
+            <button class="mobile-toggle" id="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#services">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#contact" class="btn-primary">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your DevOps Journey</h1>
+                <p class="hero-subtitle">Expert consulting, training, and solutions to accelerate your cloud infrastructure and deployment pipelines</p>
+                <div class="hero-buttons">
+                    <a href="https://calendly.com/mohd-toraif/30min" target="_blank" class="btn-primary btn-large">Book Free Consultation</a>
+                    <a href="#services" class="btn-secondary btn-large">View Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support Available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive DevOps solutions tailored to your needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>CI/CD Pipeline Setup</h3>
+                    <p>Automated deployment pipelines with GitHub Actions, Jenkins, or GitLab CI</p>
+                    <ul class="service-features">
+                        <li>Pipeline design & implementation</li>
+                        <li>Automated testing integration</li>
+                        <li>Deployment automation</li>
+                        <li>Monitoring & alerts</li>
+                    </ul>
+                    <div class="service-price">Starting at $2,500</div>
+                    <a href="#contact" class="btn-outline">Get Quote</a>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="badge">Most Popular</div>
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Migration</h3>
+                    <p>Seamless migration to AWS, Azure, or Google Cloud Platform</p>
+                    <ul class="service-features">
+                        <li>Infrastructure assessment</li>
+                        <li>Migration strategy & planning</li>
+                        <li>Zero-downtime migration</li>
+                        <li>Cost optimization</li>
+                    </ul>
+                    <div class="service-price">Starting at $5,000</div>
+                    <a href="#contact" class="btn-primary">Get Quote</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>DevOps Audit</h3>
+                    <p>Comprehensive review and optimization of your DevOps practices</p>
+                    <ul class="service-features">
+                        <li>Infrastructure review</li>
+                        <li>Security assessment</li>
+                        <li>Performance optimization</li>
+                        <li>Best practices recommendations</li>
+                    </ul>
+                    <div class="service-price">Starting at $3,000</div>
+                    <a href="#contact" class="btn-outline">Get Quote</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Cost Optimization</h3>
+                    <p>Reduce your cloud spending by up to 60% without sacrificing performance</p>
+                    <ul class="service-features">
+                        <li>Cloud cost analysis & audit</li>
+                        <li>Resource rightsizing</li>
+                        <li>Reserved instances strategy</li>
+                        <li>Automated cost monitoring</li>
+                    </ul>
+                    <div class="service-price">Starting at $2,000</div>
+                    <a href="#contact" class="btn-outline">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="technologies">
+        <div class="container">
+            <h2 class="section-title">Technologies We Work With</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-dharmachakra"></i>
+                    <span>Kubernetes</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-jenkins"></i>
+                    <span>Jenkins</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub Actions</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-gitlab"></i>
+                    <span>GitLab CI</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-cube"></i>
+                    <span>Terraform</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Magnet Section -->
+    <section class="lead-magnet">
+        <div class="container">
+            <div class="lead-magnet-content">
+                <div class="lead-magnet-text">
+                    <div class="lead-badge">FREE DOWNLOAD</div>
+                    <h2>Get Your Free DevOps Readiness Checklist</h2>
+                    <p>A comprehensive 25-point checklist to assess your DevOps maturity and identify areas for improvement.</p>
+                    <ul class="checklist-features">
+                        <li><i class="fas fa-check-circle"></i> CI/CD Pipeline Assessment</li>
+                        <li><i class="fas fa-check-circle"></i> Infrastructure as Code Evaluation</li>
+                        <li><i class="fas fa-check-circle"></i> Security & Compliance Checks</li>
+                        <li><i class="fas fa-check-circle"></i> Monitoring & Observability</li>
+                        <li><i class="fas fa-check-circle"></i> Cost Optimization Tips</li>
+                        <li><i class="fas fa-check-circle"></i> Team Collaboration Best Practices</li>
+                    </ul>
+                </div>
+                <div class="lead-magnet-form">
+                    <div class="form-card">
+                        <h3>Download Your Free Checklist</h3>
+                        <p>Get instant access to the 25-point checklist</p>
+                        <form id="lead-form">
+                            <input type="text" id="lead-name" placeholder="Your Name" required>
+                            <input type="email" id="lead-email" placeholder="Your Email" required>
+                            <input type="text" id="lead-company" placeholder="Company (Optional)">
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-download"></i> Get Free Checklist
+                            </button>
+                            <p class="privacy-note">🔒 No email required - instant download</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">DevOps Training Courses</h2>
+            <p class="section-subtitle">Learn from industry experts and accelerate your career</p>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-badge">Coming Soon</div>
+                    <h3>DevOps Fundamentals</h3>
+                    <p>Complete guide from zero to hero</p>
+                    <div class="course-details">
+                        <span><i class="fas fa-clock"></i> 10 hours</span>
+                        <span><i class="fas fa-video"></i> 50+ videos</span>
+                        <span><i class="fas fa-certificate"></i> Certificate</span>
+                    </div>
+                    <div class="course-price">$199</div>
+                    <a href="#contact" class="btn-outline">Notify Me</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-badge">Coming Soon</div>
+                    <h3>Kubernetes Mastery</h3>
+                    <p>Production-ready K8s deployments</p>
+                    <div class="course-details">
+                        <span><i class="fas fa-clock"></i> 8 hours</span>
+                        <span><i class="fas fa-video"></i> 40+ videos</span>
+                        <span><i class="fas fa-certificate"></i> Certificate</span>
+                    </div>
+                    <div class="course-price">$249</div>
+                    <a href="#contact" class="btn-outline">Notify Me</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-badge">Coming Soon</div>
+                    <h3>AWS DevOps Pro</h3>
+                    <p>Master AWS DevOps services</p>
+                    <div class="course-details">
+                        <span><i class="fas fa-clock"></i> 12 hours</span>
+                        <span><i class="fas fa-video"></i> 60+ videos</span>
+                        <span><i class="fas fa-certificate"></i> Certificate</span>
+                    </div>
+                    <div class="course-price">$299</div>
+                    <a href="#contact" class="btn-outline">Notify Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section - Disabled
+    <section class="case-studies">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <p class="section-subtitle">Real projects, real results</p>
+            
+            <div class="case-studies-placeholder">
+                <div class="placeholder-card">
+                    <div class="placeholder-icon">📊</div>
+                    <h3>Case Studies Coming Soon</h3>
+                    <p>We're currently working with clients to prepare detailed case studies showcasing:</p>
+                    <ul class="placeholder-list">
+                        <li>✓ CI/CD pipeline implementations</li>
+                        <li>✓ Cloud migration projects</li>
+                        <li>✓ Cost optimization results</li>
+                        <li>✓ Infrastructure modernization</li>
+                    </ul>
+                    <p class="placeholder-cta">Want to be featured? <a href="#contact">Work with us</a> and share your success story!</p>
+                </div>
+            </div>
+
+            Uncomment when ready to add real case studies
+            <div id="case-studies-container" class="case-studies-grid">
+                Case studies will be loaded from config
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Choose HalaDevOps?</h2>
+                    <p>We're passionate about helping organizations modernize their infrastructure and streamline their deployment processes.</p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check"></i> 10+ years of DevOps experience</li>
+                        <li><i class="fas fa-check"></i> Certified AWS & Kubernetes experts</li>
+                        <li><i class="fas fa-check"></i> Proven track record with startups & enterprises</li>
+                        <li><i class="fas fa-check"></i> 24/7 support and maintenance</li>
+                        <li><i class="fas fa-check"></i> Cost-effective solutions</li>
+                        <li><i class="fas fa-check"></i> Fast turnaround time</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="about-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Our Mission</h3>
+                        <p>Empower teams to deliver software faster, more reliably, and with confidence through modern DevOps practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about our DevOps services</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does a typical CI/CD pipeline setup take?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most CI/CD pipeline implementations take 2-4 weeks, depending on complexity. This includes initial assessment, design, implementation, testing, and team training. We work in sprints to deliver value incrementally.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you work with all cloud providers?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We have extensive experience with AWS, Azure, and Google Cloud Platform. We'll recommend the best platform for your specific needs and budget, or work with your existing cloud infrastructure.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What's included in the DevOps Audit?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our comprehensive audit includes: infrastructure review, security assessment, performance analysis, cost optimization opportunities, CI/CD pipeline evaluation, and a detailed report with actionable recommendations. You'll also get a 1-hour consultation to discuss findings.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can you help with an existing infrastructure?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We specialize in optimizing and modernizing existing infrastructure. Whether you need to improve performance, reduce costs, enhance security, or implement better practices, we can help without disrupting your operations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How much can I save with cost optimization?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most clients see 30-60% reduction in cloud costs within the first 3 months. We identify unused resources, right-size instances, implement reserved instances, and optimize storage. The service typically pays for itself within the first month.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you provide ongoing support?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer flexible support packages including 24/7 monitoring, incident response, regular maintenance, and continuous optimization. We can also train your team to manage the infrastructure independently.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What if I'm not satisfied with the service?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 100% satisfaction guarantee. If you're not happy with our work within the first week, we'll refund your payment in full. Our goal is to build long-term partnerships, not just complete projects.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I get started?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply book a free 30-minute consultation using the button above. We'll discuss your needs, challenges, and goals. Then we'll provide a detailed proposal with timeline and pricing. No commitment required for the initial consultation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your DevOps?</h2>
+            <p>Book a free 30-minute consultation to discuss your needs</p>
+            <a href="https://calendly.com/mohd-toraif/30min" target="_blank" class="btn-primary btn-large">Schedule Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's discuss how we can help you achieve your DevOps goals</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:hello@haladevops.com">hello@haladevops.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com" target="_blank">Connect with us</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/motoraif" target="_blank">@motoraif</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-calendar"></i>
+                        <div>
+                            <h4>Book a Call</h4>
+                            <a href="https://calendly.com/mohd-toraif/30min" target="_blank">Schedule meeting</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contact-form" action="https://formspree.io/f/mreldybv" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="company" placeholder="Company Name">
+                        <select name="service" required>
+                            <option value="">Select Service</option>
+                            <option value="cicd">CI/CD Pipeline Setup</option>
+                            <option value="migration">Cloud Migration</option>
+                            <option value="audit">DevOps Audit</option>
+                            <option value="cost">Cost Optimization</option>
+                            <option value="training">Training</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea name="message" placeholder="Tell us about your project" rows="5" required></textarea>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                        <div id="form-status" style="margin-top: 1rem; padding: 1rem; border-radius: 8px; display: none;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-rocket"></i>
+                    <span>HalaDevOps</span>
+                    <p>Transforming DevOps, One Pipeline at a Time</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HalaDevOps. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Remove loading screen when page is fully loaded
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 500);
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Toggle current FAQ
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Lead Magnet Form - Direct Download
+        const leadForm = document.getElementById('lead-form');
+        
+        if (leadForm) {
+            leadForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('lead-name').value;
+                const email = document.getElementById('lead-email').value;
+                const company = document.getElementById('lead-company').value;
+                
+                // Send lead info to Formspree in background (optional tracking)
+                fetch('https://formspree.io/f/mreldybv', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        type: 'checklist_download',
+                        name: name,
+                        email: email,
+                        company: company,
+                        _subject: 'DevOps Checklist Downloaded'
+                    })
+                }).catch(() => {}); // Silent fail, don't block download
+                
+                // Open checklist in new tab
+                window.open('devops-checklist.html', '_blank');
+                
+                // Track checklist download
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'generate_lead', {
+                        'event_category': 'Lead',
+                        'event_label': 'Checklist Download',
+                        'value': 5
+                    });
+                }
+                
+                // Show success message
+                alert('✓ Checklist opened in new tab! Check your browser if it was blocked.');
+                leadForm.reset();
+            });
+        }
+
+        // AJAX form submission
+        const form = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const button = form.querySelector('button[type="submit"]');
+                const originalText = button.textContent;
+                button.textContent = 'Sending...';
+                button.disabled = true;
+                
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        // Track contact form submission
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'generate_lead', {
+                                'event_category': 'Lead',
+                                'event_label': 'Contact Form',
+                                'value': 10
+                            });
+                        }
+                        
+                        formStatus.style.display = 'block';
+                        formStatus.style.background = '#d4edda';
+                        formStatus.style.color = '#155724';
+                        formStatus.style.border = '1px solid #c3e6cb';
+                        formStatus.innerHTML = '<strong>✓ Success!</strong> Thank you for your message. We\'ll get back to you within 24 hours.';
+                        form.reset();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    formStatus.style.display = 'block';
+                    formStatus.style.background = '#f8d7da';
+                    formStatus.style.color = '#721c24';
+                    formStatus.style.border = '1px solid #f5c6cb';
+                    formStatus.innerHTML = '<strong>✗ Error!</strong> Something went wrong. Please try again or email us directly.';
+                } finally {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    
+                    // Hide status after 5 seconds
+                    setTimeout(() => {
+                        formStatus.style.display = 'none';
+                    }, 5000);
+                }
+            });
+        }
+    </script>
+    <script>
+        // Google Analytics Event Tracking
+        
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+                
+                // Track mobile menu toggle
+                gtag('event', 'mobile_menu_toggle', {
+                    'event_category': 'navigation',
+                    'event_label': navMenu.classList.contains('active') ? 'open' : 'close'
+                });
+            });
+            
+            // Close menu when clicking a link
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    const icon = mobileToggle.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                });
+            });
+        }
+        
+        // Track Calendly button clicks
+        document.querySelectorAll('a[href*="calendly.com"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'CTA',
+                        'event_label': 'Book Consultation',
+                        'value': 15
+                    });
+                }
+            });
+        });
+        
+        // Track service card clicks
+        document.querySelectorAll('.service-card').forEach((card, index) => {
+            card.addEventListener('click', () => {
+                const serviceName = card.querySelector('h3')?.textContent || 'Unknown Service';
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'select_content', {
+                        'content_type': 'service',
+                        'content_id': serviceName.toLowerCase().replace(/\s+/g, '-'),
+                        'event_category': 'Service Interest',
+                        'event_label': serviceName
+                    });
+                }
+            });
+        });
+        
+        // Track FAQ interactions
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const questionText = question.querySelector('h3')?.textContent || 'FAQ';
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'engagement', {
+                        'event_category': 'FAQ',
+                        'event_label': questionText.substring(0, 50)
+                    });
+                }
+            });
+        });
+        
+        // Track "Get Quote" button clicks
+        document.querySelectorAll('.btn-outline, .btn-primary').forEach(btn => {
+            if (btn.textContent.includes('Get Quote') || btn.textContent.includes('Quote')) {
+                btn.addEventListener('click', () => {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'click', {
+                            'event_category': 'CTA',
+                            'event_label': 'Get Quote',
+                            'value': 8
+                        });
+                    }
+                });
+            }
+        });
+        
+        // Track time on site (30 seconds = engaged user)
+        setTimeout(() => {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'engagement', {
+                    'event_category': 'Time',
+                    'event_label': '30 seconds',
+                    'value': 30
+                });
+            }
+        }, 30000);
+        
+        // Track scroll depth (75% = highly engaged)
+        let scrollTracked = false;
+        window.addEventListener('scroll', () => {
+            if (!scrollTracked) {
+                const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
+                if (scrollPercent > 75) {
+                    scrollTracked = true;
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'scroll', {
+                            'event_category': 'Engagement',
+                            'event_label': '75% Scroll',
+                            'value': 75
+                        });
+                    }
+                }
+            }
+        });
+        
+        // Track email clicks
+        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'Contact',
+                        'event_label': 'Email Click'
+                    });
+                }
+            });
+        });
+        
+        // Track social media clicks
+        document.querySelectorAll('a[href*="linkedin.com"], a[href*="github.com"], a[href*="twitter.com"]').forEach(link => {
+            link.addEventListener('click', () => {
+                const platform = link.href.includes('linkedin') ? 'LinkedIn' : 
+                               link.href.includes('github') ? 'GitHub' : 'Twitter';
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'Social',
+                        'event_label': platform
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
