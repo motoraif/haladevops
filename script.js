@@ -98,6 +98,74 @@ if (canvas) {
     });
 }
 
+// Animated Why Us Background
+const whyUsCanvas = document.getElementById('why-us-canvas');
+if (whyUsCanvas) {
+    const ctx = whyUsCanvas.getContext('2d');
+    let waves = [];
+
+    function resizeCanvas() {
+        whyUsCanvas.width = whyUsCanvas.offsetWidth;
+        whyUsCanvas.height = whyUsCanvas.offsetHeight;
+    }
+
+    class Wave {
+        constructor(index) {
+            this.index = index;
+            this.amplitude = 30 + Math.random() * 20;
+            this.frequency = 0.002 + Math.random() * 0.001;
+            this.speed = 0.5 + Math.random() * 0.5;
+            this.offset = Math.random() * Math.PI * 2;
+            this.opacity = 0.1 + Math.random() * 0.1;
+        }
+
+        draw(time) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(0, 212, 255, ${this.opacity})`;
+            ctx.lineWidth = 2;
+
+            const yBase = whyUsCanvas.height * (0.3 + this.index * 0.15);
+            
+            for (let x = 0; x < whyUsCanvas.width; x += 5) {
+                const y = yBase + Math.sin(x * this.frequency + time * this.speed + this.offset) * this.amplitude;
+                
+                if (x === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            
+            ctx.stroke();
+        }
+    }
+
+    function init() {
+        resizeCanvas();
+        waves = [];
+        for (let i = 0; i < 4; i++) {
+            waves.push(new Wave(i));
+        }
+    }
+
+    let startTime = Date.now();
+    function animate() {
+        const time = (Date.now() - startTime) * 0.001;
+        ctx.clearRect(0, 0, whyUsCanvas.width, whyUsCanvas.height);
+        
+        waves.forEach(wave => wave.draw(time));
+        
+        requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+
+    window.addEventListener('resize', () => {
+        init();
+    });
+}
+
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
